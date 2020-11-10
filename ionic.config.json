@@ -1,0 +1,7 @@
+{
+  "name": "BARK-Otomotif",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
