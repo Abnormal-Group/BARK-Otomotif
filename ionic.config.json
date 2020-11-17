@@ -1,7 +1,9 @@
 {
   "name": "BARK-Otomotif",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "cordova": {}
 }
