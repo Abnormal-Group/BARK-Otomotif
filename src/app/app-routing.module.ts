@@ -8,9 +8,27 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'merek',
     pathMatch: 'full'
   },
+  {
+    path: 'merek',
+    loadChildren: () => import('./merek/merek.module').then( m => m.MerekPageModule)
+  },
+  {
+    path: 'model',
+    loadChildren: () => import('./model/model.module').then( m => m.ModelPageModule)
+  },  {
+    path: 'tipe',
+    loadChildren: () => import('./tipe/tipe.module').then( m => m.TipePageModule)
+  },
+  {
+    path: 'detail',
+    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+  },
+
+
+
 ];
 
 @NgModule({
