@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyBTQGa8nH6S3HOM60_DSUwX1iSkacPzo80",
+    authDomain: "bark-otomotif.firebaseapp.com",
+    databaseURL: "https://bark-otomotif.firebaseio.com",
+    projectId: "bark-otomotif",
+    storageBucket: "bark-otomotif.appspot.com",
+    messagingSenderId: "870052915204",
+    appId: "1:870052915204:web:58ed46d06e97db51b16d51",
+    measurementId: "G-FCKQGF73V1"
+  }
 };
 
 /*

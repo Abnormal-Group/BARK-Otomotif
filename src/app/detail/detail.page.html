@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tipe"></ion-back-button>
@@ -14,4 +14,100 @@
     <strong>Under Construction</strong>
   </div>
   
+</ion-content> -->
+
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tipe"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detail</ion-title>    
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/model"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-slides [options]="sliderOpts">
+    <ion-slide *ngFor="let img of [1, 2, 3]">
+      <img src="assets/imgdetail/{{ img }}.png" tappable (click)="openPreview(img)">   
+    </ion-slide>
+
+    <ion-slide>
+      <img src="https://www.honda-indonesia.com/uploads/images/models/colors/civic_black__1580799772449.png" tappable (click)="openPreview(img)">
+    </ion-slide> <br>
+  </ion-slides>
+
+  <ion-card>   
+    <ion-list>
+      <ion-item lines="none">
+        <h1> <b>SPESIFIKASI</b></h1> <br> 
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>   
+    <ion-list>
+      <ion-item lines="none">
+        <h3> MESIN </h3> 
+      </ion-item>
+    </ion-list>
+    <ion-item class="DetailTabel" lines="none">
+      <table style="width:100%" border="2">
+        <tr>
+          <th class="th">-</th>
+          <th class="th">New Honda Civic Hatchback RS</th> 
+        </tr> 
+
+        <tr>
+          <td><p class="paddingP">Tipe</p></td>
+          <td><p class="paddingP">1.5L 4 Silinder Segaris, VTEC Turbo DOHC, 16 Katup + DBW</p></td>
+        </tr>
+
+        <tr>
+          <td><p class="paddingP">Sistem Suplai Bahan Bakar</p></td>
+          <td><p class="paddingP">PGM-FI (Direct Injection)</p></td>
+        </tr>
+
+        <tr>
+          <td><p class="paddingP">Diameter x Langkah</p></td>
+          <td><p class="paddingP">	73,0mm x 89,5mm</p></td>
+        </tr>
+
+        <tr>
+          <td><p class="paddingP">Isi Silinder</p></td>
+          <td><p class="paddingP">	1498</p></td>
+        </tr>
+
+        <tr>
+          <td><p class="paddingP">Perbandingan Kompresi</p></td>
+          <td><p class="paddingP">	10,6:1</p></td>
+        </tr>
+
+        <tr>
+          <td><p class="paddingP">Daya Maksimum</p></td>
+          <td><p class="paddingP">173PS / 5.500rpm</p></td>
+        </tr>
+
+        <tr>
+          <td><p class="paddingP">Momen Puntir Maksimum</p></td>
+          <td><p class="paddingP">220Nm / 1.700 - 5.500rpm</p></td>
+        </tr>
+      </table> 
+    </ion-item> <br>
+  </ion-card>
+
+  <ion-card>
+    
+  </ion-card>
 </ion-content>
+

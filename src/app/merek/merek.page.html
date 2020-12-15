@@ -9,31 +9,22 @@
 </ion-header>
 
 <ion-content>
+
   <ion-grid>
-    <ion-row>
-        <ion-col>
-          <ion-item>  
-            <ion-row>
-              <a routerLink="/model" routerDirection="forward">
-                <ion-img style="width: 150px; height: 70px; margin-top: 10px; margin-bottom: 10px;" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png"></ion-img>
-              </a>
-              <ion-col style="align-self: center;">
-              </ion-col>
-            </ion-row>
-          </ion-item>
-        </ion-col>
-        <!-- <ion-col>
-          <ion-item>  
-            <ion-row>
-              <a routerLink="/model" routerDirection="forward">
-                <ion-img style="width: 150px; height: 70px; margin-top: 10px; margin-bottom: 10px; align-self: center;" src="https://logos-world.net/wp-content/uploads/2020/05/Ferrari-Logo.png"></ion-img>
-              </a>
-              <ion-col style="align-self: center;">
-              </ion-col>
-            </ion-row>
-          </ion-item>
-        </ion-col> -->
+    <ion-row size="12" >
+        <ion-col *ngFor="let item of Products" [size]="iconStatus ? '12':'6'" [routerLink]="['./model',item.ID]">
+
+        <ion-item>  
+          <ion-row>
+            <ion-img style="width: 150px; height: 70px; margin-top: 10px; margin-bottom: 10px; align-self: center;" [src]="item.MerkImage"></ion-img>
+            <ion-col style="align-self: center;">
+              <ion-label class="item-content-12" style="text-align: center;">{{item.Merk}}</ion-label> 
+            </ion-col>
+          </ion-row>
+        </ion-item>
+
+      </ion-col>
     </ion-row>
   </ion-grid>
-
+    
 </ion-content>
