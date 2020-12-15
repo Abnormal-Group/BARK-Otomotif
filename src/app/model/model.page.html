@@ -9,11 +9,29 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+
+  <ion-card *ngFor="let item of loadedProduct['Model']" [routerLink]="['./detail',item]">
+    <ion-card-content>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <ion-img [src]="loadedImage"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            <b>{{ item }}</b>
+          </ion-label>
+        </ion-item> 
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ion-grid>
+
     <ion-row>
-      <ion-col>
+      <ion-col *ngFor="let item of loadedProduct['Model']">
         <ion-item>  
           <ion-row>
+            <ion-lable>{{ item.Model }}</ion-lable>
             <a routerLink="/tipe" routerDirection="forward">
               <ion-img style="width: 150px; height: 70px; margin-top: 10px; margin-bottom: 10px;" src="https://www.grange.co.uk/upload/logo-aventador.png"></ion-img>
             </a>
@@ -23,31 +41,6 @@
         </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-item>  
-          <ion-row>
-            <a routerLink="" routerDirection="forward">
-              <ion-img style="width: 150px; height: 70px; margin-top: 10px; margin-bottom: 10px; align-self: center;" src="https://logowiki.net/wp-content/uploads/imgp/Lamborghini-Huracan-Spyder-Logo-1-8870.jpg"></ion-img>
-            </a>
-            <ion-col style="align-self: center;">
-            </ion-col>
-          </ion-row>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-item>  
-          <ion-row>
-            <a routerLink="" routerDirection="forward">
-              <ion-img style="width: 150px; height: 70px; margin-top: 10px; margin-bottom: 10px; align-self: center;" src="https://www.kindpng.com/picc/m/481-4812642_lamborghini-urus-logo-vector-hd-png-download.png"></ion-img>
-            </a>
-            <ion-col style="align-self: center;">
-            </ion-col>
-          </ion-row>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  
+  </ion-grid> -->
 </ion-content>
