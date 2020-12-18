@@ -21,7 +21,7 @@ export class ItemService
       ID: '001',
       Merk: 'Toyota',
       MerkImage: 'https://www.toyota.astra.co.id/sites/default/files/2019-11/fit-tc-logo.jpeg',
-      Model: ['Avanza', 'Innova', 'Fortuner'],
+      Model: ['Avanza', 'Innova', 'Fortuner', 'Land Cruiser'],
     },
     {
       ID: '002',
