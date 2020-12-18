@@ -8,7 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="datas.length > 0">
+<ion-content>
   <!-- <ion-slides [options]="sliderOpts">
     <ion-slide *ngFor="let img of [1, 2, 3]">
       <img src="assets/imgdetail/{{ img }}.png" tappable (click)="openPreview(img)">
@@ -21,7 +21,7 @@
     </ion-slide> <br>
   </ion-slides> -->
 
-  <ion-card *ngFor="let data of datas">
+<ion-card *ngFor="let data of datas">
     <ion-img [src]="data.Image"></ion-img>
   </ion-card>
   
@@ -84,8 +84,7 @@
     </ion-item> <br>
   </ion-card>
 
-  <ion-card>
-    
-  </ion-card>
+  <div #ABC id="ABC"></div> 
+  
 </ion-content>
 

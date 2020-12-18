@@ -10,6 +10,7 @@ import { Item } from '../item.model';
 export class MerekPage implements OnInit 
 { 
   Products  : Item[];
+  List      : boolean = true;
 
   constructor (private productService: ItemService) { }
 
@@ -17,5 +18,17 @@ export class MerekPage implements OnInit
   {
     this.Products = this.productService.getAllProduct();
     console.log(this.Products);
+  }
+
+  toggleBtn()
+  {
+    if(this.List)
+    {
+      this.List = false;
+    }
+    else
+    {
+      this.List = true;
+    }
   }
 }
