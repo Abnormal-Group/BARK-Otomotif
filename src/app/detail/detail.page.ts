@@ -1,8 +1,10 @@
-import {  Component, OnInit } from '@angular/core';
+import {  Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ImageModalPage } from '../image-modal/image-modal.page';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
+
+declare var google: any;
 
 @Component({
   selector: 'app-detail',
@@ -12,6 +14,8 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailPage implements OnInit 
 {
   datas: any = [];
+  map: any;
+  @ViewChild('ABC', {read: ElementRef, static: false}) ABC: ElementRef;
 
   sliderOpts = {
     zoom: false,
@@ -24,8 +28,23 @@ export class DetailPage implements OnInit
 
   constructor(private modalController : ModalController, private dataService: DataService, private activatedRoute: ActivatedRoute) { } 
 
-  async ngOnInit() 
+  ngOnInit() 
   { 
+    // this.activatedRoute.paramMap.subscribe(async paramMap => {
+    //   if (!paramMap.has('productId')) { return; }
+    //   const model = paramMap.get('productId');
+
+    //   console.log('Model: ', model);
+
+    //   await this.getData(model);
+      
+    // });
+  }
+
+  ngAfterViewInit() 
+  {
+    this.showMap(this.umnPos);
+
     this.activatedRoute.paramMap.subscribe(async paramMap => {
       if (!paramMap.has('productId')) { return; }
       const model = paramMap.get('productId');
@@ -37,20 +56,15 @@ export class DetailPage implements OnInit
     });
   }
 
-  // async ionViewWillEnter() 
+  // openPreview()
   // {
-  //   await this.getData('Avanza');
+  //   this.modalController.create({
+  //     component: ImageModalPage,
+  //     componentProps: {
+  //       img: Image
+  //     }
+  //   }).then(modal => modal.present());
   // }
-
-  openPreview()
-  {
-    this.modalController.create({
-      component: ImageModalPage,
-      componentProps: {
-        img: Image
-      }
-    }).then(modal => modal.present());
-  }
 
   async getData(key)
   {
@@ -75,5 +89,27 @@ export class DetailPage implements OnInit
     });
 
     console.log('Data Array: ', this.datas);
+  }
+
+  // MAP
+  umnPos: any = 
+  {
+    lat: -6.256081,
+    lng: 106.618755
+  };
+
+  showMap(pos: any) 
+  {
+    const options = {
+      center: new google.maps.LatLng(pos.lat, pos.lng),
+      zoom: 15,
+      disableDefaultUI: true
+    };
+    this.map = new google.maps.Map(this.ABC.nativeElement, options);
+    
+    const marker = new google.maps.Marker({
+      position: this.umnPos,
+      map: this.map
+    });
   }
 }

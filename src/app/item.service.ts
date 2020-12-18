@@ -21,13 +21,19 @@ export class ItemService
       ID: '001',
       Merk: 'Toyota',
       MerkImage: 'https://www.toyota.astra.co.id/sites/default/files/2019-11/fit-tc-logo.jpeg',
-      Model: ['Avanza', 'Innova'],
+      Model: ['Avanza', 'Innova', 'Fortuner'],
     },
     {
       ID: '002',
       Merk: 'Mitsubishi',
       MerkImage: 'https://logos-download.com/wp-content/uploads/2016/02/Mitsubishi_logo_standart.png',
-      Model: ['Xpander', 'Pajero Sport'],
+      Model: ['Xpander', 'Pajero'],
+    },
+    {
+      ID: '003',
+      Merk: 'Honda',
+      MerkImage: 'https://upload.wikimedia.org/wikipedia/id/thumb/d/d5/Honda-logo.png/1200px-Honda-logo.png',
+      Model: ['Brio', 'Civic'],
     },
   ];
 
